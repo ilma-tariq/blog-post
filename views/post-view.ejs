@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/delete" method="post">
+  <% if (locals.posts) { %> <% {console.log(posts.length)} %>
+  <div class="container-fluid w1 styling p-5">
+    <h1 class="text-center p-4">All Posts</h1>
+    <div class="box2">
+     
+
+    <% posts.forEach((blogPost)=>{%>
+    <div class="row text-center p-4">
+      <div class="col-2"></div>
+      <div class="col-5">
+        <h4 class="view-content"><%= blogPost.post %></h4>
+        <hr>
+      </div>
+      <div class="col-2">
+        <!-- to delete post -->
+        <input type="checkbox" onchange="this.form.submit()" name="deletePost" value="<%= blogPost.id %>" id="<%= blogPost.id %>">
+
+        <!-- to edit post -->
+
+          </div>
+          <div class="col-2">
+            <a class="btn mb-5" onclick="this.form.submit()" style="background-color: #872341; color: white; font-family: 'Libre Baskerville';" name="blogId" value="del-button-clicked" id="" ><i class="bi bi-trash3-fill"></i></a>
+            <a class="btn mb-5" onclick="this.form.submit()" style="background-color: #872341; color: white; font-family: 'Libre Baskerville';" name="blogP" value="<%= blogPost.post %>" id="<%= blogPost.post %>"><i class="bi bi-pen-fill"></i></a>
+          </div>
+    </div>
+    <%}) %>
+  </div>
+  <% } else { %>
+  <div class="container-fluid w1 styling p-5">
+    <div class="view-content text-center">
+      <h1>No post to view!</h1>
+    </div>
+    <!-- <div class="d-grid col-2 mx-auto">
+              <a class="btn" type="button" style="background-color: #872341;color: white;font-family: 'Libre Baskerville';" href="/del">Delete <i class="bi bi-trash3-fill"></i></a>
+            </div> -->
+  </div>
+  <% } %>
+</form>
+
+<script>
+  function handler(id) {
+    document.getElementById("title" + id).setAttribute("hidden", true)
+    document.getElementById("edit" + id).setAttribute("hidden", true)
+    document.getElementById("done" + id).removeAttribute("hidden")
+    document.getElementById("input" + id).removeAttribute("hidden")
+  }
+</script>
+
+<%- include("partials/footer.ejs") %>

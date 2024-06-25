@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+<div class="container-fluid">
+    <form class="row g-3 login-box styling" action="/log" method="post">
+        <div class="col-3"></div>
+        <div class="col-6 my-5 py-5" style="border: 1px solid black; border-radius: 5px;color: #872341; width: 900px; height: 500px;">
+            <h1 class="text-center pb-3">Log In</h1>
+            <div class="row">
+                <div class="col-12">
+                    <label for="inputusername4" class="form-label" >Username</label>
+                    <input type="name" class="form-control" id="inputusername4" name="username">
+                  </div>
+                  <div class="col-12">
+                    <label for="inputPassword4" class="form-label" >Password</label>
+                    <input type="password" class="form-control" id="inputPassword4" name="password">
+                  </div>
+                  <!-- <div class="d-grid col-4 mx-auto p-3"> -->
+                    <div class="col-12">
+                    <input
+                      class="btn p-2 m-2"
+                      type="submit"
+                      style="
+                        background-color: #872341;
+                        color: white;
+                        font-family: 'Libre Baskerville';
+                      "
+                    >
+                  </div>
+                                
+            </div>
+        </div>
+        <div class="col-3"></div>
+
+        
+      </form>
+</div>
+<%- include("partials/footer.ejs") %>

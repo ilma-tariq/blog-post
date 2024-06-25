@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+<form class="w1 container-fluid" action="/create" method="post">
+    <div class="d-flex justify-content-center pt-5">
+      <p class="mt-5 mb-3 text-center styling" style="font-size: 40px;">CREATE YOUR BLOG!</p>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 text-center">
+            <textarea rows="10" cols="180" class="mx-5 p-5" style="font-size: 12px;" name="blog"></textarea>
+            <input class="btn btn-lg col-3 mx-auto" type="submit" style="background-color: #872341;color: white;font-family: 'Libre Baskerville';">
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="d-grid col-2 mx-auto">
+    </div>
+  </form>
+
+<%- include("partials/footer.ejs") %>
